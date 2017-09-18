@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!--Author - Anthony Bonante
+<!--
 Halo ODST Superintendent made with CSS and PHP
 -->
 <html>
