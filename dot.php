@@ -1,21 +1,44 @@
 <!DOCTYPE html>
+<?php
+/**
+ * Halo ODST Superintendent
+ *
+ * A pure CSS/PHP render of the Halo ODST Superindentent.
+ *
+ * PHP version 5
+ *
+ * LICENSE: This source file is subject to version 3.01 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_01.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @category   Visual
+ * @package    HODSTSUPER
+ * @author     Anthony Bonante <imubergeek@gmail.com>
+ * @copyright  1997-2005 The PHP Group
+ * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @version    GIT: (Use git rev-parse HEAD to get ID)
+ * @link       http://pear.php.net/package/PackageName
+ * @see        NetOther, Net_Sample::Net_Sample()
+ */
 
-<!--
-Halo ODST Superintendent made with CSS and PHP
--->
+?>
+
 <html>
+    <head>
 
-<head>
-
-</head>
-
-<body>
-    <?php 
-    if($_GET['r'] == 'm'){header("refresh:5;url=dot.php?mood=blank&r=a");}
-    else {header("refresh:30;url=dot.php?mood=sleep&r=a");}
-    ?>
-    <style>
-    /* Colors:
+    </head>
+    <body>
+        <?php 
+        if ($_GET['r'] == 'm') {
+            header("refresh:5;url=dot.php?mood=blank&r=a");
+        } else {
+            header("refresh:30;url=dot.php?mood=sleep&r=a");
+        }
+        ?>
+        <style>
+        /* Colors:
         Cyan: #6FC3DF 111,195,223
         Pane: #E6FFFF 230,255,255
         Orange: #DF740C 223,116,12
@@ -25,7 +48,7 @@ Halo ODST Superintendent made with CSS and PHP
         eyes are 30% smaller than inner sphere
         */
         
-         :root {
+        :root {
             --border: white;
             --pricolor: #5E7E4C;
             --eyes: white;
@@ -160,11 +183,15 @@ Halo ODST Superintendent made with CSS and PHP
             left: 50px;
             margin: -15px 0px 0px 10px;
         }
-    }
-
-    </style>
-    <?php 
-    
+        </style>
+        <?php 
+/**
+* Calls eye state
+*
+*@param varchar $state State of eyes
+*
+*@return CSS CSS-specific to state
+*/
     function super($state){
         
         if(empty($state)){return '<div class="dot">
